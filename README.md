@@ -1,1 +1,1 @@
-# TEST APP
+# Powtórka HTML, CSS i JavaScriptu wraz z ES6+ - Zadanie 1

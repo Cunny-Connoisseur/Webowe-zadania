@@ -14,3 +14,6 @@ export const nazwyAktywnych = tablica => tablica.filter(
 export const sumaGodzin = tablica => tablica.reduce(
     (suma, kurs) => suma + kurs.godziny, 0
 )
+
+export const opis = kurs => `Kurs ${kurs.nazwa} trwa ${kurs.godziny} godzin`
+

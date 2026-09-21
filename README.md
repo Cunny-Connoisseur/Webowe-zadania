@@ -1,2 +1,1 @@
-# Repo z Zadaniami z Webowych
-## Wszystkie zadania w branchach
+# Powtórka HTML, CSS i JavaScriptu wraz z ES6+ - Zadanie 2

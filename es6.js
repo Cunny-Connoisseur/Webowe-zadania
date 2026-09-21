@@ -10,3 +10,7 @@ export const nazwyAktywnych = tablica => tablica.filter(
 ).map(
     kurs => kurs.nazwa
 )
+
+export const sumaGodzin = tablica => tablica.reduce(
+    (suma, kurs) => suma + kurs.godziny, 0
+)

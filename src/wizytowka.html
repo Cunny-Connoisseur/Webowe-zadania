@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Wizytówka — Krzysztof Górnisiewicz</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<div class="header">
+		<img src="avatar.jpg" alt="awatar" class="avatar">
+		<div class="header_text">
+			<h1>Krzysztof Górnisiewicz</h1>
+			<p class="subtitle">Technik programista - klasa 5</p>
+		</div>
+	</div>
+
+	<div class="main">
+		<div id="about-me">
+			<h2>O mnie</h2>
+			<p>Jestem uczniem ZSŁ na profilu programistycznym.</p>
+		</div>
+		<div id="skills">
+			<h2>Umiejętności</h2>
+			<ul class="skills-list">
+				<li>HTML</li>
+				<li>CSS</li>
+				<li>JS</li>
+				<li>React</li>
+				<li>Vue</li>
+			</ul>
+		</div>
+		<div id="contact">
+			<h2>Kontakt</h2>
+
+			<form id="form" novalidate>
+				<div class="field">
+					<label for="name">Imię i nazwisko</label>
+					<input type="text" name="name" id="name">
+					<p class="error" id="error-name"></p>
+				</div>
+				<div class="field">
+					<label for="email">Email</label>
+					<input type="email" name="email" id="email">
+					<p class="error" id="error-email"></p>
+				</div>
+				<div class="field">
+					<label for="title">Temat</label>
+					<select name="title" id="title">
+						<option value="">-- Wybierz temat --</option>
+						<option value="cowork">Propozycja współpracy</option>
+						<option value="question">Pytanie o projekt</option>
+						<option value="other">Inne</option>
+					</select>
+					<p class="error" id="error-title"></p>
+				</div>
+				<div class="field">
+					<label for="message">Wiadomość</label>
+					<textarea name="message" id="message" rows="5"></textarea>
+					<p class="error" id="error-message"></p>
+				</div>
+				<button type="submit" class="btn">Wyślij wiadomość</button>
+			</form>
+			<div id="thanks" hidden>
+				<h3>Dziękuję za wiadomość!</h3>
+				<p id="thanks-content"></p>
+			</div>
+		</div>
+	</div>
+
+	<div class="footer">
+		<p>
+			Krzysztof Górnisiewicz
+			<a href="https://github.com/Cunny-Connoisseur/Webowe-zadania">GitHub</a>
+			<a href="mailto:kigorn77@gmail.com">email</a>
+		</p>
+	</div>
+
+	<script src="main.js"></script>
+</body>
+</html>

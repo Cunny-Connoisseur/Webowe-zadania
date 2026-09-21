@@ -1,0 +1,112 @@
+:root{
+    --color-main: #14ff88;
+    --color-dark: #146622;
+    --color-error: #881414;
+    --color-bg: #142222;
+    --color-text: #c0ffee;
+}
+*{
+    box-sizing: border-box;
+    color: var(--color-text);
+}
+body{
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.5;
+    color: var(--color-text);
+    background-color: var(--color-bg);
+}
+.main, .footer {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+.header {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+.avatar {
+    width: 96px;
+    height: 96px;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+.header h1 {
+    margin: 0;
+    font-size: 2rem;
+    color: var(--color-main);
+}
+.subtitle {
+    margin: 0.5rem;
+    color: var(--color-dark);
+}
+h2 {
+    font-size: 1.3rem;
+    border-bottom: 1px solid var(--color-main);
+    padding-bottom: .5rem;
+}
+.skills-list {
+    padding-left: 1.5rem;
+}
+.field {
+    margin-bottom: 1rem;
+}
+label{
+    display: block;
+    font-weight: bold;
+}
+input, select, textarea {
+    background: var(--color-dark);
+    width: 100%;
+    padding: .5rem;
+    border-radius: 10px;
+    border: 3px solid var(--color-main);
+}
+.field-error {
+    border-color: var(--color-error);
+}
+.error{
+    margin: .5rem;
+    min-height: 1.5rem;
+    font-size: .7rem;
+    color: var(--color-error);
+}
+.btn {
+    padding: .5rem;
+    font-weight: bold;
+    background-color: var(--color-main);
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background, border .2s ease-in;
+    border-radius: 10px;
+    border: 3px solid var(--color-dark);
+    color: var(--color-dark);
+}
+.btn:hover{
+    background: var(--color-dark);
+    color: var(--color-text);
+    border: 3px solid var(--color-main);
+}
+.thanks{
+    padding: 1rem;
+    background-color: var(--color-dark);
+}
+.thanks h3 {
+    color: var(--color-main);
+}
+.footer{
+    font-size: 1rem;
+}
+a{
+    color: var(--color-main);
+    text-decoration: none;
+}
+a:hover{
+    text-decoration: underlinef;
+    color: var(--color-dark);
+}

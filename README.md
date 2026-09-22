@@ -1,1 +1,1 @@
-# Wstęp do Reacta - zadanie 1
+# Template dla Zadań z React

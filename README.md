@@ -1,2 +1,1 @@
-# Repo z Zadaniami z Webowych
-## Wszystkie zadania w branchach
+# Wstęp do Reacta - zadanie 1

@@ -11,7 +11,7 @@ export default ({name}) => {
                 <div class="collapse navbar-collapse" id="navbar-body">
                     <ul class="navbar-nav ms-3 ms-lg-auto">
                         <li class="nav-item">
-                            <a class="nav-link active" href="#galery">Galeria</a>
+                            <a class="nav-link active" href="#gallery">Galeria</a>
                         </li>
                         
                         <li class="nav-item">

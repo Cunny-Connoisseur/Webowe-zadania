@@ -1,8 +1,7 @@
-import photos from "../data/photos.json"
 import categories from "../data/categories.json"
 import Card from "./helpers/Card"
 
-export default () => {
+export default ({photos}) => {
     return (
         <div className="cards-container mt-3" id="gallery">
             {photos.map(item => (

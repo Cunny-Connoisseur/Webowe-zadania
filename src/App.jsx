@@ -6,9 +6,12 @@ import ModalAddPhoto from './components/ModalAddPhoto'
 import Navbar from './components/Navbar'
 import OffcanvasFilter from './components/OffcanvasFilter'
 import Photos from './components/Photos'
+import photos from "./data/photos.json"
+import { useState } from 'react'
 
 export default function App() {
-
+  const [photo, setPhoto] = useState(photos)
+  
   return (<>
     <Navbar name={"Galeria zdjęć"} />
 
@@ -17,7 +20,7 @@ export default function App() {
 
       <CategoryBar />
       
-      <Photos />
+      <Photos photos={photos} />
 
       <Footer />
     </div>

@@ -14,7 +14,7 @@ export default ({}) => {
             </div>
 
             <div className="col-12 col-lg-4 justify-content-lg-end align-items-center d-flex">
-                <button type="button" class="btn btn-secondary me-2" data-bs-toggle="offcanvas" data-bs-target="#filter-modal">
+                <button type="button" class="btn btn-secondary me-2" data-bs-toggle="offcanvas" data-bs-target="#filter-offcanvas">
                     Filtry
                 </button>
 

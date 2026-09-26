@@ -1,6 +1,6 @@
 import Modal from "./Modal"
 
-export default ({title, desc, src, category, color, id}) => {
+export default ({title, desc, src, category, color, id, onDelete}) => {
 
     return (
         <>
@@ -20,8 +20,12 @@ export default ({title, desc, src, category, color, id}) => {
                         {desc}
                     </p>
                     
-                    <button type="button" className="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target={`#${id}`}>
+                    <button type="button" className="btn btn-outline-primary me-2" data-bs-toggle="modal" data-bs-target={`#${id}`}>
                         Powiększ
+                    </button>
+
+                    <button type="button" className="btn btn-outline-danger" onClick={onDelete}>
+                        Usuń
                     </button>
                 </div>
             </div>

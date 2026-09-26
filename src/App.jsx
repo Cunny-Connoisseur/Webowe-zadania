@@ -13,6 +13,10 @@ export default function App() {
   const [photos, setPhotos] = useState(photos_file)
   const [activeCategory, setActiveCategory] = useState('all')
   const visible = activeCategory === 'all' ? photos : photos.filter(photo => photo.category === activeCategory)
+
+  const handleDeletePhoto = (id) => {
+    setPhotos(photos.filter(photo => photo.id !== id))
+  }
   
   return (<>
     <Navbar name={"Galeria zdjęć"} />
@@ -22,7 +26,7 @@ export default function App() {
 
       <CategoryBar activeCategory={activeCategory} onChoose={setActiveCategory} />
       
-      <Photos photos={visible} />
+      <Photos photos={visible} onDelete={handleDeletePhoto} />
 
       <Footer />
     </div>

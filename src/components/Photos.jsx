@@ -1,7 +1,7 @@
 import categories from "../data/categories.json"
 import Card from "./helpers/Card"
 
-export default ({photos}) => {
+export default ({photos, onDelete}) => {
     return (
         <div className="cards-container mt-3" id="gallery">
             {photos.length === 0 && (
@@ -18,6 +18,7 @@ export default ({photos}) => {
                         title={item.title}
                         color={categories.find(category => category.value === item.category).color}
                         id={`photo_${item.id}-modal`}
+                        onDelete={() => onDelete(item.id)}
                     />
                 </div>
             ))}

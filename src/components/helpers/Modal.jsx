@@ -1,21 +1,21 @@
 export default ({children, buttons, id, title, close_txt}) => {
 
     return (<>
-        <div class="modal fade modal-lg" id={id} tabindex="-1">
-            <div class="modal-dialog modal-dialog-centered">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h1 class="modal-title fs-5">{title}</h1>
+        <div className="modal fade modal-lg" id={id} tabIndex="-1">
+            <div className="modal-dialog modal-dialog-centered">
+                <div className="modal-content">
+                    <div className="modal-header">
+                        <h1 className="modal-title fs-5">{title}</h1>
 
-                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                        <button type="button" className="btn-close" data-bs-dismiss="modal"></button>
                     </div>
 
-                    <div class="modal-body">
+                    <div className="modal-body">
                         {children}
                     </div>
 
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">{close_txt}</button>
+                    <div className="modal-footer">
+                        <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">{close_txt}</button>
                         {buttons}
                     </div>
                 </div>

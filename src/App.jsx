@@ -6,11 +6,13 @@ import ModalAddPhoto from './components/ModalAddPhoto'
 import Navbar from './components/Navbar'
 import OffcanvasFilter from './components/OffcanvasFilter'
 import Photos from './components/Photos'
-import photos from "./data/photos.json"
+import photos_file from "./data/photos.json"
 import { useState } from 'react'
 
 export default function App() {
-  const [photo, setPhoto] = useState(photos)
+  const [photos, setPhotos] = useState(photos_file)
+  const [activeCategory, setActiveCategory] = useState('all')
+  const visible = activeCategory === 'all' ? photos : photos.filter(photo => photo.category === activeCategory)
   
   return (<>
     <Navbar name={"Galeria zdjęć"} />
@@ -18,9 +20,9 @@ export default function App() {
     <div className="container-fluid p-4">
       <Header  />
 
-      <CategoryBar />
+      <CategoryBar activeCategory={activeCategory} onChoose={setActiveCategory} />
       
-      <Photos photos={photos} />
+      <Photos photos={visible} />
 
       <Footer />
     </div>

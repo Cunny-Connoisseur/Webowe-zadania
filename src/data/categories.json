@@ -1,22 +1,38 @@
 [
     {
-        "value": "landscape",
-        "text": "Krajobraz"
-    },
-    {
-        "value": "beach",
-        "text": "Morze"
+        "value": "architecture",
+        "text": "Architektura"
     },
     {
         "value": "mountains",
         "text": "Góry"
     },
     {
-        "value": "city",
-        "text": "Miasto"
+        "value": "forest",
+        "text": "Las"
     },
     {
         "value": "sky",
         "text": "Niebo"
+    },
+    {
+        "value": "city",
+        "text": "Miasto"
+    },
+    {
+        "value": "beach",
+        "text": "Morze"
+    },
+    {
+        "value": "desert",
+        "text": "Pustynia"
+    },
+    {
+        "value": "river",
+        "text": "Rzeka"
+    },
+    {
+        "value": "winter",
+        "text": "Zima"
     }
 ]

@@ -10,6 +10,11 @@
         "color": "saddlebrown"
     },
     {
+        "value": "canyon",
+        "text": "Kanion",
+        "color": "sienna"
+    },
+    {
         "value": "forest",
         "text": "Las",
         "color": "forestgreen"

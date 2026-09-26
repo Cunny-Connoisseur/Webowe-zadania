@@ -1,7 +1,7 @@
 export default ({children, buttons, id, title, close_txt}) => {
 
     return (<>
-        <div class="modal fade" id={id} tabindex="-1">
+        <div class="modal fade modal-lg" id={id} tabindex="-1">
             <div class="modal-dialog modal-dialog-centered">
                 <div class="modal-content">
                     <div class="modal-header">

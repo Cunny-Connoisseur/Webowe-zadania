@@ -4,7 +4,7 @@ export default ({}) => {
 
     return (
         <>
-            <div className="row gap-2 mt-4">
+            <div id="categories" className="row gap-2 mt-4">
                 <div className="col-auto p-0">
                     <button type="button" className="btn btn-outline-primary active">
                         Wszystkie

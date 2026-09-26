@@ -1,38 +1,47 @@
 [
     {
         "value": "architecture",
-        "text": "Architektura"
+        "text": "Architektura",
+        "color": "slategray"
     },
     {
         "value": "mountains",
-        "text": "Góry"
+        "text": "Góry",
+        "color": "saddlebrown"
     },
     {
         "value": "forest",
-        "text": "Las"
+        "text": "Las",
+        "color": "forestgreen"
     },
     {
         "value": "sky",
-        "text": "Niebo"
+        "text": "Niebo",
+        "color": "darkviolet"
     },
     {
         "value": "city",
-        "text": "Miasto"
+        "text": "Miasto",
+        "color": "midnightblue"
     },
     {
         "value": "beach",
-        "text": "Morze"
+        "text": "Morze",
+        "color": "darkcyan"
     },
     {
         "value": "desert",
-        "text": "Pustynia"
+        "text": "Pustynia",
+        "color": "goldenrod"
     },
     {
         "value": "river",
-        "text": "Rzeka"
+        "text": "Rzeka",
+        "color": "royalblue"
     },
     {
         "value": "winter",
-        "text": "Zima"
+        "text": "Zima",
+        "color": "lightcyan"
     }
 ]

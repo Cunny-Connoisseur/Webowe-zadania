@@ -1,6 +1,6 @@
 export default ({name}) => {
     return (<>
-        <nav className="navbar navbar-expand-lg bg-body-tertiary w-100 sticky-top top-0 start-0 border-bottom">
+        <nav className="navbar navbar-expand-lg bg-body-tertiary w-100 top-0 start-0 border-bottom">
             <div className="container-fluid">
                 <a className="navbar-brand fw-bold text-primary" href="#">{name}</a>
 

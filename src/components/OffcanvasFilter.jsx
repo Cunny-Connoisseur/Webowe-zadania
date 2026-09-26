@@ -1,7 +1,10 @@
 import Offcanvas from "./helpers/Offcanvas"
 import categories from "../data/categories.json"
 
-export default ({}) => {
+export default ({activeCategory, onChoose}) => {
+    const handleToggle = (categoryValue) => {
+        onChoose(activeCategory === categoryValue ? 'all' : categoryValue)
+    }
 
     return (<>
         <Offcanvas id={"filter-offcanvas"} title={"Filtry"}>
@@ -13,7 +16,9 @@ export default ({}) => {
                 {categories.map(item => (
                     
                     <div className="form-check" key={item.value}>
-                        <input type="checkbox" className="form-check-input" name={`filter_${item.value}`} value={item.value} defaultChecked />
+                        <input type="checkbox" className="form-check-input" name={`filter_${item.value}`} value={item.value} 
+                        checked={activeCategory === item.value || activeCategory === 'all'}
+                        onChange={() => handleToggle(item.value)} />
 
                         <label className="form-check-label" htmlFor={`filter_${item.value}`}>
                             {item.text}

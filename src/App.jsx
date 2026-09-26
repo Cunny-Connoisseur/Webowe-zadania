@@ -28,6 +28,6 @@ export default function App() {
     </div>
 
     <ModalAddPhoto />
-    <OffcanvasFilter />
+    <OffcanvasFilter activeCategory={activeCategory} onChoose={setActiveCategory} />
   </>)
 }

@@ -1,5 +1,6 @@
 import './App.css'
 import CategoryBar from './components/CategoryBar'
+import Footer from './components/Footer'
 import Header from './components/Header'
 import ModalAddPhoto from './components/ModalAddPhoto'
 import Navbar from './components/Navbar'
@@ -17,6 +18,8 @@ export default function App() {
       <CategoryBar />
       
       <Photos />
+
+      <Footer />
     </div>
 
     <ModalAddPhoto />

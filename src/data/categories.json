@@ -1,0 +1,22 @@
+[
+    {
+        "value": "landscape",
+        "text": "Krajobraz"
+    },
+    {
+        "value": "beach",
+        "text": "Morze"
+    },
+    {
+        "value": "mountains",
+        "text": "Góry"
+    },
+    {
+        "value": "city",
+        "text": "Miasto"
+    },
+    {
+        "value": "sky",
+        "text": "Niebo"
+    }
+]

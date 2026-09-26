@@ -1,4 +1,5 @@
 // import './App.css'
+import CategoryBar from './components/CategoryBar'
 import Header from './components/Header'
 import ModalAddPhoto from './components/ModalAddPhoto'
 import Navbar from './components/Navbar'
@@ -10,6 +11,7 @@ export default function App() {
     <Navbar name={"Galeria"} />
     <div className="container-fluid p-4">
       <Header  />
+      <CategoryBar />
     </div>
 
     <ModalAddPhoto />

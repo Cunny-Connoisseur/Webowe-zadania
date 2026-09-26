@@ -4,7 +4,12 @@ import Card from "./helpers/Card"
 export default ({photos}) => {
     return (
         <div className="cards-container mt-3" id="gallery">
-            {photos.map(item => (
+            {photos.length === 0 && (
+                <div className="alert alert-warning card-item">
+                    Brak zdjęć w wybranej kategorii.
+                </div>
+            )}
+            {photos.length !== 0 && photos.map(item => (
                 <div className="card-item mb-3" key={item.id}>
                     <Card
                         category={get_category_text(item.category)}

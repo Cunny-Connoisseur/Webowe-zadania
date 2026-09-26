@@ -1,9 +1,9 @@
 // import './App.css'
-import Hello from './components/Hello'
+import Navbar from './components/Navbar'
 
 export default function App() {
 
   return (<>
-    <Hello name={"Krzysztof"} />
+    <Navbar name={"Galeria"} />
   </>)
 }

@@ -1,4 +1,4 @@
-import Modal from "./Modal"
+import Modal from "./helpers/Modal"
 import categories from "../data/categories.json"
 
 export default ({}) => {

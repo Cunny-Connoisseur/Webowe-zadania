@@ -1,4 +1,4 @@
-import Offcanvas from "./Offcanvas"
+import Offcanvas from "./helpers/Offcanvas"
 import categories from "../data/categories.json"
 
 export default ({}) => {

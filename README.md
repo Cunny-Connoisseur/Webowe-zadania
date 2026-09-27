@@ -1,1 +1,1 @@
-# Wstęp do Reacta - zadanie
+# Stan, Listy i Renderowanie Warunkowe - Zadanie

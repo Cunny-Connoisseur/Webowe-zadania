@@ -5,6 +5,7 @@
         "category": "architecture",
         "src": "https://img.andrewprokos.com/LONDON-NATURAL-HISTORY-MUSEUM-EXTERIOR-9572-COLOR-1000PX-375x500.jpg",
         "desc": "Kolorowa fotografia architektoniczna wiktoriańskiej fasady Muzeum Historii Naturalnej w Londynie, w Wielkiej Brytanii."
+        ,"favorite": false
     },
     {
         "id": 2,
@@ -12,6 +13,7 @@
         "category": "architecture",
         "src": "https://th-thumbnailer.cdn-si-edu.com/Lx4weA_Pr7hAbayGVIQUjSgtJnI=/fit-in/1072x0/https://tf-cmsv2-photocontest-smithsonianmag-prod-approved.s3.amazonaws.com/6556446f0a885c1719744e5b9b3c5d2025f4ed2f.jpg",
         "desc": "Zabytkowy dom wiktoriański w filadelfijskiej dzielnicy Kensington, wyróżniający się fasadą pokrytą gęstą siecią pnączy."
+        ,"favorite": false
     },
     {
         "id": 3,
@@ -19,6 +21,7 @@
         "category": "mountains",
         "src": "https://www.jessleephotos.com/images/640/Cathedral-Group.jpg",
         "desc": "Ośnieżone szczyty gór wyłaniające się z mgły w dramatycznym, złocistym świetle."
+        ,"favorite": false
     },
     {
         "id": 4,
@@ -26,6 +29,7 @@
         "category": "mountains",
         "src": "https://photographylife.com/wp-content/uploads/2012/10/Capitol-Peak-Sunset.jpg",
         "desc": "Szczyt górski oświetlony ciepłym światłem zachodzącego słońca."
+        ,"favorite": false
     },
     {
         "id": 5,
@@ -33,6 +37,7 @@
         "category": "forest",
         "src": "https://alphauniverseglobal.media.zestyio.com/Alpha-Universe-Forest-Photography-Ellen-Borggreve-5.jpg",
         "desc": "Spowity mgłą las z poskręcanymi, omszałymi drzewami tworzącymi tajemniczy, baśniowy klimat."
+        ,"favorite": false
     },
     {
         "id": 6,
@@ -40,6 +45,7 @@
         "category": "forest",
         "src": "https://static.wixstatic.com/media/846d71_ef08a482f66d4e9693bc03de2fc741b6~mv2.jpg/v1/fill/w_980,h_653,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/846d71_ef08a482f66d4e9693bc03de2fc741b6~mv2.jpg",
         "desc": "Spokojny las skąpany w ciepłych promieniach słońca przebijających się przez drzewa."
+        ,"favorite": false
     },
     {
         "id": 7,
@@ -47,6 +53,7 @@
         "category": "sky",
         "src": "https://images.unsplash.com/photo-1519681393784-d120267933ba",
         "desc": "Ciemne nocne niebo usiane jasnymi gwiazdami nad spokojnym górskim krajobrazem."
+        ,"favorite": false
     },
     {
         "id": 8,
@@ -54,6 +61,7 @@
         "category": "sky",
         "src": "https://images.unsplash.com/photo-1483347756197-71ef80e95f73",
         "desc": "Zielona zorza polarna rozświetlająca nocne niebo nad ciemnym, zimowym krajobrazem."
+        ,"favorite": false
     },
     {
         "id": 9,
@@ -61,6 +69,7 @@
         "category": "city",
         "src": "https://images.unsplash.com/photo-1519501025264-65ba15a82390",
         "desc": "Tętniąca życiem metropolia nocą, pełna kolorowych neonów, świateł i odbić na mokrych ulicach."
+        ,"favorite": false
     },
     {
         "id": 10,
@@ -68,6 +77,7 @@
         "category": "city",
         "src": "https://static.cdprojektred.com/cms.cdprojektred.com/16x9_big/872822c5e50dc71f345416098d29fc3ae5cd26c1-1920x1080.jpg",
         "desc": "Futurystyczne, deszczowe miasto nocą, pełne neonów, wieżowców i cyberpunkowego klimatu."
+        ,"favorite": false
     },
     {
         "id": 11,
@@ -75,6 +85,7 @@
         "category": "beach",
         "src": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e",
         "desc": "Rajska plaża z turkusową wodą, jasnym piaskiem i palmami w ciepłym, słonecznym świetle."
+        ,"favorite": false
     },
     {
         "id": 12,
@@ -82,6 +93,7 @@
         "category": "beach",
         "src": "https://images.unsplash.com/photo-1473116763249-2faaef81ccda",
         "desc": "Spokojna plaża podczas zachodu słońca, z ciepłym światłem odbijającym się na powierzchni oceanu."
+        ,"favorite": false
     },
     {
         "id": 13,
@@ -89,6 +101,7 @@
         "category": "desert",
         "src": "https://images.unsplash.com/photo-1509316785289-025f5b846b35",
         "desc": "Rozległe pustynne wydmy oświetlone ciepłym światłem zachodzącego słońca."
+        ,"favorite": false
     },
     {
         "id": 14,
@@ -96,6 +109,7 @@
         "category": "desert",
         "src": "https://thumbs.dreamstime.com/b/zadziwiajcy-widoki-gobi-pustynia-pod-gwiadzistym-niebem-59214060.jpg",
         "desc": "Samotne wydmy pustyni pod rozgwieżdżonym nocnym niebem."
+        ,"favorite": false
     },
     {
         "id": 15,
@@ -103,6 +117,7 @@
         "category": "river",
         "src": "https://images.unsplash.com/photo-1433086966358-54859d0ed716",
         "desc": "Spokojna rzeka przepływająca przez zieloną dolinę otoczoną wysokimi drzewami."
+        ,"favorite": false
     },
     {
         "id": 16,
@@ -110,6 +125,7 @@
         "category": "river",
         "src": "https://images.unsplash.com/photo-1437482078695-73f5ca6c96e2",
         "desc": "Górska rzeka płynąca pomiędzy skalistymi zboczami i zielonymi lasami."
+        ,"favorite": false
     },
     {
         "id": 17,
@@ -117,6 +133,7 @@
         "category": "winter",
         "src": "https://images.unsplash.com/photo-1483664852095-d6cc6870702d",
         "desc": "Ośnieżony zimowy las pokryty świeżym śniegiem, skąpany w miękkim świetle."
+        ,"favorite": false
     },
     {
         "id": 18,
@@ -124,5 +141,6 @@
         "category": "winter",
         "src": "https://images.unsplash.com/photo-1453306458620-5bbef13a5bca",
         "desc": "Mała drewniana chatka otoczona śniegiem i wysokimi drzewami podczas spokojnego zimowego dnia."
+        ,"favorite": false
     }
 ]

@@ -1,4 +1,4 @@
-export default ({full_name, course_nr, course_list}) => {
+export default ({full_name, course_nr, course_list, status, setStatus}) => {
     const handleSubmit = e => {
         e.preventDefault()
 
@@ -6,13 +6,21 @@ export default ({full_name, course_nr, course_list}) => {
 
         if(course) {
             console.log(course)
+            setStatus({
+                success: true,
+                content: `${full_name.current.value} zapisany na kurs ${course_nr.current.value}. ${course}`
+            })
         } else {
             console.log("Nieprawidłowy nr kursu")
+            setStatus({
+                success: false,
+                content: `Nieprawidłowy nr kursu`
+            })
         }
     }
     
     return (<>
-        <form onSubmit={handleSubmit} className="mt-5">
+            <form onSubmit={handleSubmit} className="mt-5">
             <div className="form-group my-2">
                 <label htmlFor="full_name">
                     Imię i nazwisko: 
@@ -35,5 +43,11 @@ export default ({full_name, course_nr, course_list}) => {
                 </button>
             </div>
         </form>
+        
+        {status && (
+            <div className={`alert alert-${status.success ? 'success' : 'danger'}`}>
+                {status.content}
+            </div>
+        )}
     </>)
 }

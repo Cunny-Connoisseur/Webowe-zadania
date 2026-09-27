@@ -14,6 +14,7 @@ const course_list = [
 export default ({}) => {
     const full_name = useRef(undefined)
     const course_nr = useRef(undefined)
+    const [status, setStatus] = useState(undefined)
     const [searchText, setSearchText] = useState('')
     const [sortAsc, setSortAsc] = useState(true)
 
@@ -53,6 +54,6 @@ export default ({}) => {
             ))}
         </ol>
 
-        <FormEnroll course_list={course_list} course_nr={course_nr} full_name={full_name} />
+        <FormEnroll course_list={course_list} course_nr={course_nr} full_name={full_name} status={status} setStatus={setStatus} />
     </>)
 }

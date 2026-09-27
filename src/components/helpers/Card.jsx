@@ -8,17 +8,19 @@ export default ({title, desc, src, category, color, id, favorite, onDelete, onTo
                 <img src={src} className="card-img-top" />
                 
                 <div className="card-body">
-                    <h5 className="card-title">
-                        <button type="button" className="btn btn-link p-0 me-2 text-decoration-none fs-4" onClick={onToggleFavorite}>
+                    <div className="d-flex justify-content-between align-items-start">
+                        <h5 className="card-title">
+                            {title}
+                        </h5>
+
+                        <button type="button" className="btn btn-link p-0 me-2 text-decoration-none fs-4 lh-1" onClick={onToggleFavorite}>
                             {favorite ? (
                                 <i className="bi bi-star-fill text-warning" />
                             ) : (
                                 <i className="bi bi-star text-secondary" />
                             )}
                         </button>
-                        
-                        {title}
-                    </h5>
+                    </div>
 
                     <span className="badge text-black" style={{backgroundColor: color}}>
                         {category}

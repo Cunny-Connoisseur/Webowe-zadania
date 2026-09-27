@@ -14,7 +14,8 @@ export default ({}) => {
                             Tytuł
                         </label>
 
-                        <input type="text" name="title" className='form-control is-invalid' />
+                        <input type="text" name="title" id="title" className='form-control' value={formData.title} 
+                            onChange={handleChange('title')}/>
                         
                         <div className="invalid-feedback">
                             Podaj tytuł
@@ -26,7 +27,7 @@ export default ({}) => {
                             Kategoria
                         </label>
 
-                        <select type="text" name="category" className='form-select'>
+                        <select name="category" id="category" className='form-select' value={formData.category} onChange={handleChange('category')}>
                             <option value="" disabled>
                                 -- Wybierz kategorię --
                             </option>
@@ -46,11 +47,7 @@ export default ({}) => {
                             Plik
                         </label>
 
-                        <input type="file" accept="Image/*" name="file" className='form-control' />
-                        
-                        <div className="form-text">
-                            Jakikolwiek format obrazu
-                        </div>
+                        <input type="text" name="src" id="src" className='form-control' placeholder="https://..." value={formData.src} onChange={handleChange('src')} />
                     </div>
                 </div>
                 
@@ -60,7 +57,8 @@ export default ({}) => {
                             Opis
                         </label>
 
-                        <textarea name="desc" className='form-control' rows={5} />
+                        <textarea name="desc" id="desc" className='form-control' rows={5} value={formData.desc} 
+                            onChange={handleChange('desc')} />
                         
                         <div className="form-text">
                             Krótki opis zdjęcia

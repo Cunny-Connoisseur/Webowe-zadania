@@ -1,4 +1,4 @@
-import { useRef } from "react"
+import { useRef, useState } from "react"
 
 const course_list = [
     "Programowanie w C++",
@@ -12,6 +12,12 @@ const course_list = [
 export default ({}) => {
     const full_name = useRef(undefined)
     const course_nr = useRef(undefined)
+    const [searchText, setSearchText] = useState('')
+    const visible = course_list.map(
+        (course, idx) => ({course, nr: idx + 1})
+    ).filter(
+        ({course}) => course.toLowerCase().includes(searchText.toLocaleLowerCase())
+    )
 
     const handleSubmit = e => {
         e.preventDefault()
@@ -34,10 +40,13 @@ export default ({}) => {
             Liczba kursów: {course_list.length}
         </h2>
 
+        <input type="text" name="search" id="search" className="form-control my-3" placeholder="Szukaj" 
+            value={searchText} onChange={e => setSearchText(e.target.value)} />
+
         <ol className="mt-3">
-            {course_list.map((item, idx) => (
-                <li key={idx}>
-                    {item}
+            {visible.map(({course, nr}) => (
+                <li key={nr} value={nr}>
+                    {course}
                 </li>
             ))}
         </ol>

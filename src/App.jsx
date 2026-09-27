@@ -18,6 +18,12 @@ export default function App() {
     setPhotos(photos.filter(photo => photo.id !== id))
   }
   
+  const handleAddPhoto = (newPhoto) => {
+    const newId = Math.max(...photos.map(p => p.id), 0) + 1
+    setPhotos([...photos, { ...newPhoto, id: newId, favorite: false }])
+  }
+
+  
   return (<>
     <Navbar name={"Galeria zdjęć"} />
 
@@ -31,7 +37,7 @@ export default function App() {
       <Footer />
     </div>
 
-    <ModalAddPhoto />
+    <ModalAddPhoto onAdd={handleAddPhoto} />
     <OffcanvasFilter activeCategory={activeCategory} onChoose={setActiveCategory} />
   </>)
 }

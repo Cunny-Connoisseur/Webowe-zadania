@@ -1,9 +1,11 @@
 // import './App.css'
-import Hello from './components/Hello'
+import Courses from "./components/Courses";
 
 export default function App() {
 
   return (<>
-    <Hello name={"Krzysztof"} />
+  <div className="container-sm d-flex align-items-center flex-column">
+    <Courses />
+  </div>
   </>)
 }

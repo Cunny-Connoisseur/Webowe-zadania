@@ -1,4 +1,6 @@
 import { useRef, useState } from "react"
+import Search from "./Search"
+import FormEnroll from "./FormEnroll"
 
 const course_list = [
     "Programowanie w C++",
@@ -13,23 +15,13 @@ export default ({}) => {
     const full_name = useRef(undefined)
     const course_nr = useRef(undefined)
     const [searchText, setSearchText] = useState('')
-    const visible = course_list.map(
-        (course, idx) => ({course, nr: idx + 1})
-    ).filter(
-        ({course}) => course.toLowerCase().includes(searchText.toLocaleLowerCase())
+
+    const visible = course_list.map((course, idx) => ({
+        course, 
+        nr: idx + 1
+    })).filter(({course}) => 
+        course.toLowerCase().includes(searchText.toLocaleLowerCase())
     )
-
-    const handleSubmit = e => {
-        e.preventDefault()
-
-        const course = course_list[Number(course_nr.current.value) - 1]
-
-        if(course) {
-            console.log(course)
-        } else {
-            console.log("Nieprawidłowy nr kursu")
-        }
-    }
 
     return (<>
         <h1 className="my-2">
@@ -40,8 +32,7 @@ export default ({}) => {
             Liczba kursów: {course_list.length}
         </h2>
 
-        <input type="text" name="search" id="search" className="form-control my-3" placeholder="Szukaj" 
-            value={searchText} onChange={e => setSearchText(e.target.value)} />
+        <Search searchText={searchText} setSearchText={setSearchText} />
 
         <ol className="mt-3">
             {visible.map(({course, nr}) => (
@@ -51,28 +42,6 @@ export default ({}) => {
             ))}
         </ol>
 
-        <form onSubmit={handleSubmit} className="mt-5">
-            <div className="form-group my-2">
-                <label htmlFor="full_name">
-                    Imię i nazwisko: 
-                </label>
-
-                <input type="text" id="full_name" className="form-control" ref={full_name} />
-            </div>
-
-            <div className="form-group my-2">
-                <label htmlFor="course_nr">
-                    Numer kursu:
-                </label>
-                
-                <input type="number" id="course_nr" className="form-control" ref={course_nr} />
-            </div>
-
-            <div className="form-group my-4 justify-content-center d-flex">
-                <button type="submit" className="btn btn-outline-primary">
-                    Zapisz Się
-                </button>
-            </div>
-        </form>
+        <FormEnroll course_list={course_list} course_nr={course_nr} full_name={full_name} />
     </>)
 }

@@ -15,12 +15,15 @@ export default ({}) => {
     const full_name = useRef(undefined)
     const course_nr = useRef(undefined)
     const [searchText, setSearchText] = useState('')
+    const [sortAsc, setSortAsc] = useState(true)
 
     const visible = course_list.map((course, idx) => ({
         course, 
         nr: idx + 1
     })).filter(({course}) => 
-        course.toLowerCase().includes(searchText.toLocaleLowerCase())
+        course.toLowerCase().includes(searchText.toLocaleLowerCase()
+    )).sort((x, y) => 
+        sortAsc ? x.course.localeCompare(y.course) : y.course.localeCompare(x.course)
     )
 
     return (<>
@@ -33,6 +36,10 @@ export default ({}) => {
         </h2>
 
         <Search searchText={searchText} setSearchText={setSearchText} />
+        
+        <button type="button" className="btn btn-outline-secondary text-nowrap" onClick={() => setSortAsc(x => !x)}>
+            Sortuj {sortAsc ? 'Z->A' : 'A->Z'}
+        </button>
 
         <ol className="mt-3">
             {visible.map(({course, nr}) => (

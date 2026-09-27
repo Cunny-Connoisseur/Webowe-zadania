@@ -1,1 +1,1 @@
-# Template dla Zadań z React
+# Zapisy na Kursy - Zadanie

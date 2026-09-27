@@ -30,7 +30,7 @@ export default ({ onAdd }) => {
                             Tytuł
                         </label>
 
-                        <input type="text" name="title" className='form-control' value={formData.title} 
+                        <input type="text" name="title" id="title" className='form-control' value={formData.title} 
                             onChange={handleChange('title')}/>
                         
                         <div className="invalid-feedback">
@@ -43,7 +43,7 @@ export default ({ onAdd }) => {
                             Kategoria
                         </label>
 
-                        <select name="category" className='form-select' value={formData.category} onChange={handleChange('category')}>
+                        <select name="category" id="category" className='form-select' value={formData.category} onChange={handleChange('category')}>
                             <option value="" disabled>
                                 -- Wybierz kategorię --
                             </option>
@@ -63,7 +63,7 @@ export default ({ onAdd }) => {
                             Link do zdjęcia
                         </label>
 
-                        <input type="text" name="src" className='form-control' placeholder="https://..." value={formData.src} onChange={handleChange('src')} />
+                        <input type="text" name="src" id="src" className='form-control' placeholder="https://..." value={formData.src} onChange={handleChange('src')} />
                     </div>
                 </div>
                 
@@ -73,7 +73,7 @@ export default ({ onAdd }) => {
                             Opis
                         </label>
 
-                        <textarea name="desc" className='form-control' rows={5} value={formData.desc} 
+                        <textarea name="desc" id="desc" className='form-control' rows={5} value={formData.desc} 
                             onChange={handleChange('desc')} />
                         
                         <div className="form-text">

@@ -41,7 +41,11 @@ export default ({}) => {
             Sortuj {sortAsc ? 'Z->A' : 'A->Z'}
         </button>
 
-        <ol className="mt-3">
+        <p className="text-body-secondary mt-5 mb-0">
+            Wyświetlono {visible.length} z {course_list.length} kursów
+        </p>
+
+        <ol className="my-3">
             {visible.map(({course, nr}) => (
                 <li key={nr} value={nr}>
                     {course}

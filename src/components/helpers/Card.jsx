@@ -1,6 +1,6 @@
 import Modal from "./Modal"
 
-export default ({title, desc, src, category, color, id, onDelete}) => {
+export default ({title, desc, src, category, color, id, favorite, onDelete, onToggleFavorite}) => {
 
     return (
         <>
@@ -9,6 +9,14 @@ export default ({title, desc, src, category, color, id, onDelete}) => {
                 
                 <div className="card-body">
                     <h5 className="card-title">
+                        <button type="button" className="btn btn-link p-0 me-2 text-decoration-none fs-4" onClick={onToggleFavorite}>
+                            {favorite ? (
+                                <i className="bi bi-star-fill text-warning" />
+                            ) : (
+                                <i className="bi bi-star text-secondary" />
+                            )}
+                        </button>
+                        
                         {title}
                     </h5>
 

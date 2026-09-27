@@ -23,7 +23,12 @@ export default function App() {
     setPhotos([...photos, { ...newPhoto, id: newId, favorite: false }])
   }
 
-  
+  const handleToggleFavorite = (id) => {
+    setPhotos(photos.map(photo => 
+      photo.id === id ? { ...photo, favorite: !photo.favorite } : photo
+    ))
+  }
+
   return (<>
     <Navbar name={"Galeria zdjęć"} />
 
@@ -36,7 +41,7 @@ export default function App() {
           Wyświetlono {visible.length} z {photos.length} zdjęć
       </p>
       
-      <Photos photos={visible} onDelete={handleDeletePhoto} />
+      <Photos photos={visible} onDelete={handleDeletePhoto} onToggleFavorite={handleToggleFavorite} />
 
       <Footer />
     </div>

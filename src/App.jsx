@@ -32,6 +32,10 @@ export default function App() {
 
       <CategoryBar activeCategory={activeCategory} onChoose={setActiveCategory} />
       
+      <p className="text-body-secondary my-2">
+          Wyświetlono {visible.length} z {photos.length} zdjęć
+      </p>
+      
       <Photos photos={visible} onDelete={handleDeletePhoto} />
 
       <Footer />

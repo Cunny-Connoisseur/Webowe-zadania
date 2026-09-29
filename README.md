@@ -1,1 +1,1 @@
-# Powtórka HTML, CSS i JavaScriptu wraz z ES6+ - Zadanie 2
+# Powtórka HTML, CSS i JavaScriptu wraz z ES6+ - Zadania

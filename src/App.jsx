@@ -6,12 +6,27 @@ import ModalAddPhoto from './components/ModalAddPhoto'
 import Navbar from './components/Navbar'
 import OffcanvasFilter from './components/OffcanvasFilter'
 import Photos from './components/Photos'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 
 export default function App() {
+  useEffect(() => {handleFetch()}, [])
+  
   const [photos, setPhotos] = useState([])
   const [activeCategory, setActiveCategory] = useState('all')
   const visible = activeCategory === 'all' ? photos : photos.filter(photo => photo.category === activeCategory)
+  
+  const handleFetch = async () => {
+    try {
+      const res = await fetch('/photos.json')
+      
+      if(!res.ok) throw new Error(`Błąd serwera: ${res.status}`)
+      
+      const data = await res.json()
+      setPhotos(data)
+    } catch(err) {
+      console.error(err.message)
+    }
+  }
 
   const handleDeletePhoto = (id) => {
     setPhotos(photos.filter(photo => photo.id !== id))

@@ -14,8 +14,7 @@ export default ({}) => {
                             Tytuł
                         </label>
 
-                        <input type="text" name="title" id="title" className='form-control' value={formData.title} 
-                            onChange={handleChange('title')}/>
+                        <input type="text" name="title" id="title" className='form-control'/>
                         
                         <div className="invalid-feedback">
                             Podaj tytuł
@@ -27,7 +26,7 @@ export default ({}) => {
                             Kategoria
                         </label>
 
-                        <select name="category" id="category" className='form-select' value={formData.category} onChange={handleChange('category')}>
+                        <select name="category" id="category" className='form-select'>
                             <option value="" disabled>
                                 -- Wybierz kategorię --
                             </option>
@@ -47,7 +46,7 @@ export default ({}) => {
                             Plik
                         </label>
 
-                        <input type="text" name="src" id="src" className='form-control' placeholder="https://..." value={formData.src} onChange={handleChange('src')} />
+                        <input type="text" name="src" id="src" className='form-control' placeholder="https://..." />
                     </div>
                 </div>
                 
@@ -57,8 +56,8 @@ export default ({}) => {
                             Opis
                         </label>
 
-                        <textarea name="desc" id="desc" className='form-control' rows={5} value={formData.desc} 
-                            onChange={handleChange('desc')} />
+                        <textarea name="desc" id="desc" className='form-control' rows={5}
+                        />
                         
                         <div className="form-text">
                             Krótki opis zdjęcia

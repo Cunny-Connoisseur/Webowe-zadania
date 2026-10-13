@@ -6,11 +6,10 @@ import ModalAddPhoto from './components/ModalAddPhoto'
 import Navbar from './components/Navbar'
 import OffcanvasFilter from './components/OffcanvasFilter'
 import Photos from './components/Photos'
-import photos_file from "./data/photos.json"
 import { useState } from 'react'
 
 export default function App() {
-  const [photos, setPhotos] = useState(photos_file)
+  const [photos, setPhotos] = useState([])
   const [activeCategory, setActiveCategory] = useState('all')
   const visible = activeCategory === 'all' ? photos : photos.filter(photo => photo.category === activeCategory)
 

@@ -5,6 +5,7 @@ import Header from './components/Header'
 import ModalAddPhoto from './components/ModalAddPhoto'
 import Navbar from './components/Navbar'
 import OffcanvasFilter from './components/OffcanvasFilter'
+import PhotoOfTheDay from './components/PhotoOfTheDay'
 import Photos from './components/Photos'
 import { useEffect, useState } from 'react'
 
@@ -54,6 +55,8 @@ export default function App() {
 
     <div className="container-fluid p-4">
       <Header  />
+
+      <PhotoOfTheDay onDelete={handleDeletePhoto} onToggleFavorite={handleToggleFavorite} />
 
       <CategoryBar activeCategory={activeCategory} onChoose={setActiveCategory} />
       

@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
 import Photo from "./helpers/Photo"
 
-export default ({onDelete, onToggleFavorite}) => {
+export default ({}) => {
     const [id, setId] = useState(randomID)
     const [photo, setPhoto] = useState(null)
     const [isLoading, setIsLoading] = useState(true)

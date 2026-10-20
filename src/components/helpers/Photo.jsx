@@ -1,7 +1,7 @@
 import categories from "../../data/categories.json"
 import Card from "./Card"
 
-export default ({item, onDelete, onToggleFavorite}) => {
+export default ({item, onDelete, onToggleFavorite, minimalistic}) => {
 
     return (<>
         <div className="card-item mb-3">
@@ -15,6 +15,7 @@ export default ({item, onDelete, onToggleFavorite}) => {
                 onDelete={() => onDelete(item.id)}
                 favorite={item.favorite}
                 onToggleFavorite={() => onToggleFavorite(item.id)}
+                minimalistic={minimalistic}
             />
         </div>
     </>)

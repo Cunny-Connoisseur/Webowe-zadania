@@ -1,6 +1,6 @@
 import Modal from "./Modal"
 
-export default ({title, desc, src, category, color, id, favorite, onDelete, onToggleFavorite}) => {
+export default ({title, desc, src, category, color, id, favorite, onDelete, onToggleFavorite, minimalistic}) => {
 
     return (
         <>
@@ -13,13 +13,15 @@ export default ({title, desc, src, category, color, id, favorite, onDelete, onTo
                             {title}
                         </h5>
 
-                        <button type="button" className="btn btn-link p-0 me-2 text-decoration-none fs-4 lh-1" onClick={onToggleFavorite}>
-                            {favorite ? (
-                                <i className="bi bi-star-fill text-warning" />
-                            ) : (
-                                <i className="bi bi-star text-secondary" />
-                            )}
-                        </button>
+                        {!minimalistic && (
+                            <button type="button" className="btn btn-link p-0 me-2 text-decoration-none fs-4 lh-1" onClick={onToggleFavorite}>
+                                {favorite ? (
+                                    <i className="bi bi-star-fill text-warning" />
+                                ) : (
+                                    <i className="bi bi-star text-secondary" />
+                                )}
+                            </button>
+                        )}
                     </div>
 
                     <span className="badge text-black" style={{backgroundColor: color}}>
@@ -34,9 +36,11 @@ export default ({title, desc, src, category, color, id, favorite, onDelete, onTo
                         Powiększ
                     </button>
 
-                    <button type="button" className="btn btn-outline-danger" onClick={onDelete}>
-                        Usuń
-                    </button>
+                    {!minimalistic && (
+                        <button type="button" className="btn btn-outline-danger" onClick={onDelete}>
+                            Usuń
+                        </button>
+                    )}
                 </div>
             </div>
 

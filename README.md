@@ -1,1 +1,1 @@
-# Stan, Listy i Renderowanie Warunkowe - Zadanie (WIP)
+# Stan, Listy i Renderowanie Warunkowe - Zadanie

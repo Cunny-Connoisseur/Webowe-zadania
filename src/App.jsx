@@ -16,38 +16,7 @@ export default function App() {
   const visible = activeCategory === 'all' ? photos : photos.filter(photo => photo.category === activeCategory)
   
   useEffect(() => {handleFetch()}, [])
-  
-  const handleFetch = async () => {
-    try {
-      setIsLoading(true)
-      
-      const res = await fetch('/photos.json')
-      
-      if(!res.ok) throw new Error(`Błąd serwera: ${res.status}`)
-      
-      const data = await res.json()
-      setPhotos(data)
-    } catch(err) {
-      setIsError(err.message)
-    } finally {
-      setIsLoading(false)
-    }
-  }
 
-  const handleDeletePhoto = (id) => {
-    setPhotos(photos.filter(photo => photo.id !== id))
-  }
-  
-  const handleAddPhoto = (newPhoto) => {
-    const newId = Math.max(...photos.map(p => p.id), 0) + 1
-    setPhotos([...photos, { ...newPhoto, id: newId, favorite: false }])
-  }
-
-  const handleToggleFavorite = (id) => {
-    setPhotos(photos.map(photo => 
-      photo.id === id ? { ...photo, favorite: !photo.favorite } : photo
-    ))
-  }
 
   return (<>
     <Navbar name={"Galeria zdjęć"} />
@@ -92,4 +61,36 @@ export default function App() {
     <ModalAddPhoto onAdd={handleAddPhoto} />
     <OffcanvasFilter activeCategory={activeCategory} onChoose={setActiveCategory} />
   </>)
+}
+
+const handleFetch = async () => {
+  try {
+    setIsLoading(true)
+    
+    const res = await fetch('/photos.json')
+    
+    if(!res.ok) throw new Error(`Błąd serwera: ${res.status}`)
+    
+    const data = await res.json()
+    setPhotos(data)
+  } catch(err) {
+    setIsError(err.message)
+  } finally {
+    setIsLoading(false)
+  }
+}
+
+const handleDeletePhoto = (id) => {
+  setPhotos(photos.filter(photo => photo.id !== id))
+}
+
+const handleAddPhoto = (newPhoto) => {
+  const newId = Math.max(...photos.map(p => p.id), 0) + 1
+  setPhotos([...photos, { ...newPhoto, id: newId, favorite: false }])
+}
+
+const handleToggleFavorite = (id) => {
+  setPhotos(photos.map(photo => 
+    photo.id === id ? { ...photo, favorite: !photo.favorite } : photo
+  ))
 }

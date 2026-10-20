@@ -34,7 +34,7 @@ export default ({onDelete, onToggleFavorite}) => {
 
     return (<>
         <div className="justify-content-center d-flex align-items-center flex-column w-100">
-            <div className="my-3 col-6">
+            <div className="my-3 col-6 d-flex flex-column">
                 <h2 className="text-center">Zdjęcie dnia</h2>
 
                 {!isLoading && !error && photo && (

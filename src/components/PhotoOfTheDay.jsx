@@ -21,8 +21,7 @@ export default ({onDelete, onToggleFavorite}) => {
 
             let photo = data.find(x => x.id == id)
             if(!photo) {
-                console.error(`Brak zdjęcia z ID = ${id}, użyto innego zdjęcia`)
-                photo = data[0]
+                throw new Error(`Brak zdjęcia z ID = ${id}`)
             }
             setPhoto(photo)
         } catch (err) {
@@ -40,6 +39,15 @@ export default ({onDelete, onToggleFavorite}) => {
                 {!isLoading && !error && photo && (
                     <Photo item={photo} minimalistic={true} />
                 )}
+                
+                {error && (
+                    <div className="text-body-secondary my-2 text-center mt-5">
+                        <p className="text-danger my-2">
+                            Nie udało się pobrać zdjęcia: {error}
+                        </p>
+                    </div>
+                )}
+
                 <button className="btn btn-primary" disabled={isLoading} onClick={() => setId(randomID())}>
                     {isLoading ? "Losowanie..." : "Losuj nowe zdjęcie"}
                 </button>

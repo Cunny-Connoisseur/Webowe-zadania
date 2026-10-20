@@ -26,7 +26,7 @@ export default function App() {
       if(!res.ok) throw new Error(`Błąd serwera: ${res.status}`)
       
       const data = await res.json()
-      // setPhotos(data)
+      setPhotos(data)
     } catch(err) {
       setIsError(err.message)
     } finally {

@@ -10,6 +10,8 @@ import { useEffect, useState } from 'react'
 
 export default function App() {
   const [photos, setPhotos] = useState([])
+  const [isLoading, setIsLoading] = useState(false)
+  const [isError, setIsError] = useState(null)
   const [activeCategory, setActiveCategory] = useState('all')
   const visible = activeCategory === 'all' ? photos : photos.filter(photo => photo.category === activeCategory)
   
@@ -17,6 +19,8 @@ export default function App() {
   
   const handleFetch = async () => {
     try {
+      setIsLoading(true)
+      
       const res = await fetch('/photos.json')
       
       if(!res.ok) throw new Error(`Błąd serwera: ${res.status}`)
@@ -24,7 +28,9 @@ export default function App() {
       const data = await res.json()
       setPhotos(data)
     } catch(err) {
-      console.error(err.message)
+      setIsError(err.message)
+    } finally {
+      setIsLoading(false)
     }
   }
 
@@ -51,11 +57,34 @@ export default function App() {
 
       <CategoryBar activeCategory={activeCategory} onChoose={setActiveCategory} />
       
-      <p className="text-body-secondary my-2">
-          Wyświetlono {visible.length} z {photos.length} zdjęć
-      </p>
+      {isLoading && (
+        <div className="text-body-secondary my-2 text-center mt-5">
+          <div className="spinner-border text-primary" role='status'></div>
+          <p className='text-muted mt-1'>Ładowanie galerii</p>
+        </div>
+      )}
+
+      {isError && (
+        <div className="text-body-secondary my-2 text-center mt-5">
+          <p className="text-danger my-2">
+            Nie udało się pobrać danych: {isError}
+          </p>
+        </div>
+      )}
+
+      {photos.length == 0 && (
+        <div className="alert alert-warning card-item">
+            Brak zdjęć w całej galerii.
+        </div>
+      )}
+
+      {!isLoading && !isError && !photos.length == 0 && (<>
+        <p className="text-body-secondary my-2">
+            Wyświetlono {visible.length} z {photos.length} zdjęć
+        </p>
+        <Photos photos={visible} onDelete={handleDeletePhoto} onToggleFavorite={handleToggleFavorite} />
+      </>)}
       
-      <Photos photos={visible} onDelete={handleDeletePhoto} onToggleFavorite={handleToggleFavorite} />
 
       <Footer />
     </div>

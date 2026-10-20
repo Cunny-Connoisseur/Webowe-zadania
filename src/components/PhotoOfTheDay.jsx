@@ -31,12 +31,22 @@ export default ({onDelete, onToggleFavorite}) => {
             setIsLoading(false)
         }
     }
+    console.log(photo)
 
     return (<>
-        {!isLoading && !error && (
-            <Photo item={photo} onDelete={onDelete} onToggleFavorite={onToggleFavorite} />
-        )}
+        <div className="justify-content-center d-flex align-items-center flex-column w-100">
+            <div className="my-3 col-6">
+                <h2 className="text-center">Zdjęcie dnia</h2>
+
+                {!isLoading && !error && photo && (
+                    <Photo item={photo} minimalistic={true} />
+                )}
+                <button className="btn btn-primary" disabled={isLoading} onClick={() => setId(randomID())}>
+                    {isLoading ? "Losowanie..." : "Losuj nowe zdjęcie"}
+                </button>
+            </div>
+        </div>
     </>)
 }
 
-const randomID = () => Math.floor(Math.random() * 20) + 1
+const randomID = () => Math.floor(Math.random() * 19) + 1

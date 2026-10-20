@@ -31,7 +31,6 @@ export default ({onDelete, onToggleFavorite}) => {
             setIsLoading(false)
         }
     }
-    console.log(photo)
 
     return (<>
         <div className="justify-content-center d-flex align-items-center flex-column w-100">

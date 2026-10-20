@@ -9,11 +9,11 @@ import Photos from './components/Photos'
 import { useEffect, useState } from 'react'
 
 export default function App() {
-  useEffect(() => {handleFetch()}, [])
-  
   const [photos, setPhotos] = useState([])
   const [activeCategory, setActiveCategory] = useState('all')
   const visible = activeCategory === 'all' ? photos : photos.filter(photo => photo.category === activeCategory)
+  
+  useEffect(() => {handleFetch()}, [])
   
   const handleFetch = async () => {
     try {

@@ -21,8 +21,10 @@ export default ({onDelete, onToggleFavorite}) => {
 
             let photo = data.find(x => x.id == id)
             if(!photo) {
+                setPhoto(null)
                 throw new Error(`Brak zdjęcia z ID = ${id}`)
             }
+            setError(null)
             setPhoto(photo)
         } catch (err) {
             setError(err.message)

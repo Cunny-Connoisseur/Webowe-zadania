@@ -1,5 +1,4 @@
-import categories from "../data/categories.json"
-import Card from "./helpers/Card"
+import Photo from "./helpers/Photo"
 
 export default ({photos, onDelete, onToggleFavorite}) => {
     return (
@@ -12,22 +11,8 @@ export default ({photos, onDelete, onToggleFavorite}) => {
             )}
 
             {photos.length !== 0 && photos.map(item => (
-                <div className="card-item mb-3" key={item.id}>
-                    <Card
-                        category={get_category_text(item.category)}
-                        desc={item.desc}
-                        src={item.src}
-                        title={item.title}
-                        color={categories.find(category => category.value === item.category).color}
-                        id={`photo_${item.id}-modal`}
-                        onDelete={() => onDelete(item.id)}
-                        favorite={item.favorite}
-                        onToggleFavorite={() => onToggleFavorite(item.id)}
-                    />
-                </div>
+                <Photo item={item} onDelete={onDelete} onToggleFavorite={onToggleFavorite} key={item.id} />
             ))}
         </div>
     )
 }
-
-const get_category_text = category => categories.find(item => item.value === category).text

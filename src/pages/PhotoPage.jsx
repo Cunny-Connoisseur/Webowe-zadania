@@ -36,16 +36,13 @@ export default ({}) => {
         {!isLoading && !error && photo && (
             <div className="container mt-4">
                 <Card
-                    category={get_category_text(item.category)}
-                    desc={item.desc}
-                    src={item.src}
-                    title={item.title}
-                    color={categories.find(category => category.value === item.category).color}
-                    id={`photo_${item.id}-modal`}
-                    onDelete={() => onDelete(item.id)}
-                    favorite={item.favorite}
-                    onToggleFavorite={() => onToggleFavorite(item.id)}
-                    minimalistic={minimalistic}
+                    category={get_category_text(photo.category)}
+                    desc={photo.desc}
+                    src={photo.src}
+                    title={photo.title}
+                    color={categories.find(category => category.value === photo.category).color}
+                    id={photo.id}
+                    minimalistic={true}
                 />
                 
                 <button className="btn btn-secondary" onClick={() => navigate(-1)}>

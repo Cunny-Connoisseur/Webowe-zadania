@@ -11,7 +11,7 @@ export default ({item, onDelete, onToggleFavorite, minimalistic}) => {
                 src={item.src}
                 title={item.title}
                 color={categories.find(category => category.value === item.category).color}
-                id={`photo_${item.id}-modal`}
+                id={item.id}
                 onDelete={() => onDelete(item.id)}
                 favorite={item.favorite}
                 onToggleFavorite={() => onToggleFavorite(item.id)}

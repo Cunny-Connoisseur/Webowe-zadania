@@ -18,13 +18,13 @@ export const downloadPhoto = async (id) => {
     return photo
 }
 
-export const deletePhoto = async (id) => {
+export const deletePhoto = (id) => {
     photos = photos.filter(x => x.id !== id)
 
     return photos
 }
 
-export const toggleFavorite = async (id) => {
+export const toggleFavorite = (id) => {
     photos = photos.map(x => (x.id === id ? {...x, favorite: !x.favorite} : x))
 
     return photos

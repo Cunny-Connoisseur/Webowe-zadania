@@ -87,14 +87,10 @@ export default ({}) => {
 
                         <textarea name="desc" id="desc" className='form-control' rows={5} value={formData.desc} 
                             onChange={handleChange('desc')} />
-                        
-                        <div className="form-text">
-                            Krótki opis zdjęcia
-                        </div>
                     </div>
                 </div>
-                <div className="row my-2">
-                    <div className="col-12 gap-2">
+                <div className="row my-2 mt-4">
+                    <div className="col-12 d-flex gap-2">
                         <button type='submit' form="add-photo-form" className="btn btn-primary">Zapisz</button>
                         
                         <Link to={'/'} className='btn btn-secondary'>

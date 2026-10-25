@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom"
+
 export default ({}) => {
     return (<>
         <div className="row g-2">
@@ -14,13 +16,9 @@ export default ({}) => {
             </div>
 
             <div className="col-12 col-lg-4 justify-content-lg-end align-items-center d-flex">
-                <button type="button" className="btn btn-secondary me-2" data-bs-toggle="offcanvas" data-bs-target="#filter-offcanvas">
-                    Filtry
-                </button>
-
-                <button type="button" className="btn btn-primary" data-bs-toggle="modal" data-bs-target="#new_image-modal">
+                <Link to={"/dodaj"} className="btn btn-primary">
                     Dodaj nowe zdjęcie
-                </button>
+                </Link>
             </div>
         </div>
     </>)

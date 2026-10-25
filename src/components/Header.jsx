@@ -16,7 +16,7 @@ export default ({}) => {
             </div>
 
             <div className="col-12 col-lg-4 justify-content-lg-end align-items-center d-flex">
-                <Link to={"/dodaj"} className="btn btn-primary">
+                <Link to={"/add"} className="btn btn-primary">
                     Dodaj nowe zdjęcie
                 </Link>
             </div>

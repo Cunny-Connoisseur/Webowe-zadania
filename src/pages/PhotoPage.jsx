@@ -1,7 +1,7 @@
 import { useNavigate, useParams } from "react-router-dom"
-import categories from "../../data/categories.json"
-import Card from "./Card"
+import categories from "../data/categories.json"
 import { usePhotos } from "../hooks/usePhotos"
+import Card from "../components/helpers/Card"
 
 export default ({}) => {
     const {id} = useParams()

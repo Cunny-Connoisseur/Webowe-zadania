@@ -1,1 +1,1 @@
-# Stan, Listy i Renderowanie Warunkowe - Zadanie
+# Router i architektura aplikacji - Zadanie

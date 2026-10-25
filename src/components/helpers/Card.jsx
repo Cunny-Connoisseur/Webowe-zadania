@@ -1,4 +1,4 @@
-import Modal from "./Modal"
+import { Link } from "react-router-dom"
 
 export default ({title, desc, src, category, color, id, favorite, onDelete, onToggleFavorite, minimalistic}) => {
 
@@ -32,9 +32,9 @@ export default ({title, desc, src, category, color, id, favorite, onDelete, onTo
                         {desc}
                     </p>
                     
-                    <button type="button" className="btn btn-outline-primary me-2" data-bs-toggle="modal" data-bs-target={`#${id}`}>
+                    <Link className="btn btn-outline-primary me-2" to={`/photo/${id}`}>
                         Powiększ
-                    </button>
+                    </Link>
 
                     {!minimalistic && (
                         <button type="button" className="btn btn-outline-danger" onClick={onDelete}>
@@ -43,11 +43,6 @@ export default ({title, desc, src, category, color, id, favorite, onDelete, onTo
                     )}
                 </div>
             </div>
-
-            <Modal close_txt={"Zamknij"} id={id} title={title}>
-                <img src={src} className="img-fluid rounded w-100 mb-3" />
-                <p className="text-body-secondary">{desc}</p>
-            </Modal>
         </>
     ) 
 }

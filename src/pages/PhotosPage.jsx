@@ -3,6 +3,7 @@ import { usePhotos } from "../hooks/usePhotos"
 import Header from "../components/Header"
 import CategoryBar from "../components/CategoryBar"
 import Photos from "../components/Photos"
+import PhotoOfTheDay from "../components/PhotoOfTheDay"
 import { deletePhoto, toggleFavorite } from "../services/photos"
 
 export default ({}) => {
@@ -14,7 +15,7 @@ export default ({}) => {
         <div className="container-fluid p-4">
             <Header />
 
-            <PhotoOfTheDay onDelete={handleDeletePhoto} onToggleFavorite={handleToggleFavorite} />
+            <PhotoOfTheDay onDelete={id => setPhotos(deletePhoto(id))} onToggleFavorite={id => setPhotos(toggleFavorite(id))} />
             
             {isLoading && (
                 <div className="text-body-secondary my-2 text-center mt-5">

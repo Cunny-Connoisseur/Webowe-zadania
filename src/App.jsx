@@ -1,15 +1,33 @@
+import { useState } from 'react'
 import { initialBooks } from './data/books'
+
+const genres = [...new Set(initialBooks.map(book => book.genre))]
 
 export default function App() {
   const books = initialBooks
+  const [activeGenre, setActiveGenre] = useState('all')
+
+  const visible = activeGenre === 'all' ? books : books.filter(book => book.genre === activeGenre)
+
   return (
     <div className="container mt-4">
       <h1>Katalog biblioteki</h1>
 
-      <p className="text-body-secondary">Wyświetlono {books.length} z {books.length} książek</p>
+      <div className="d-flex flex-wrap gap-2 mb-3">
+        {['all', ...genres].map(genre => {
+          const label = genre === 'all' ? 'Wszystkie' : genre
+          const buttonClass = activeGenre === genre ? 'btn btn-outline-primary active' : 'btn btn-outline-primary'
+
+          return (
+            <button type="button" key={genre} className={buttonClass} onClick={() => setActiveGenre(genre)}>{label}</button>
+          )
+        })}
+      </div>
+
+      <p className="text-body-secondary">Wyświetlono {visible.length} z {books.length} książek</p>
 
       <div className="row g-3">
-        {books.map(book => (
+        {visible.map(book => (
           <div key={book.id} className="col-12 col-md-4">
             <div className={`card h-100 ${book.available ? 'border-success' : 'border-danger'}`}>
               <div className="card-body">

@@ -4,10 +4,14 @@ import { initialBooks } from './data/books'
 const genres = [...new Set(initialBooks.map(book => book.genre))]
 
 export default function App() {
-  const books = initialBooks
+  const [books, setBooks] = useState(initialBooks)
   const [activeGenre, setActiveGenre] = useState('all')
 
   const visible = activeGenre === 'all' ? books : books.filter(book => book.genre === activeGenre)
+
+  const handleToggleFavorite = (id) => {
+    setBooks(books => books.map(book => book.id === id ? {...book, favorite: !book.favorite} : book))
+  }
 
   return (
     <div className="container mt-4">
@@ -33,6 +37,9 @@ export default function App() {
               <div className="card-body">
                 <div className="d-flex justify-content-between align-items-start">
                   <h3 className="card-title h5">{book.title}</h3>
+                  <button type="button" className="btn btn-link p-0 fs-4" onClick={() => handleToggleFavorite(book.id)}>
+                    {book.favorite ? '★' : '☆'}
+                  </button>
                 </div>
                 <p className="text-body-secondary mb-1">{book.author}</p>
                 <span className={`badge text-bg-${book.available ? 'success' : 'danger'}`}>{book.available ? 'Dostępna' : 'Wypożyczona'}</span>

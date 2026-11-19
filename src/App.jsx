@@ -1,9 +1,7 @@
-// import './App.css'
-import Hello from './components/Hello'
-
 export default function App() {
-
-  return (<>
-    <Hello name={"Krzysztof"} />
-  </>)
+  return (
+    <div className="container mt-4">
+      <h1>Książka przepisów</h1>
+    </div>
+  )
 }

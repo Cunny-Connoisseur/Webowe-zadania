@@ -6,6 +6,7 @@ export default function App() {
   const [ascending, setAscending] = useState(true)
   const [name, setName] = useState('')
   const [minutes, setMinutes] = useState('')
+  const [minutesError, setMinutesError] = useState('')
 
   const direction = ascending ? 1 : -1
   const sortedRecipes = [...recipes].sort((a, b) => (a.minutes - b.minutes) * direction)
@@ -20,7 +21,15 @@ export default function App() {
   const handleSubmit = (event) => {
     event.preventDefault()
 
-    handleAddRecipe({name, category: 'inne', minutes: Number(minutes)})
+    const duration = Number(minutes)
+
+    if(!(duration > 0)) {
+      setMinutesError('Czas musi być liczbą dodatnią.')
+      return
+    }
+
+    setMinutesError('')
+    handleAddRecipe({name, category: 'inne', minutes: duration})
     setName('')
     setMinutes('')
   }
@@ -56,7 +65,10 @@ export default function App() {
 
         <div className="mb-3">
           <label htmlFor="minutes" className="form-label">Czas przygotowania (min)</label>
-          <input id="minutes" type="number" className="form-control" value={minutes} onChange={event => setMinutes(event.target.value)} />
+          <input id="minutes" type="number" className={`form-control${minutesError ? ' is-invalid' : ''}`} value={minutes} onChange={event => setMinutes(event.target.value)} />
+          {minutesError && (
+            <div className="invalid-feedback d-block">{minutesError}</div>
+          )}
         </div>
 
         <button type="submit" className="btn btn-primary">Zapisz</button>

@@ -13,6 +13,7 @@ export default function App() {
   const [isLoading, setIsLoading] = useState(true)
   const [error, setError] = useState(null)
   const [search, setSearch] = useState('')
+  const [hasDeletedBike, setHasDeletedBike] = useState(false)
 
   useEffect(() => {
     let active = true
@@ -28,6 +29,11 @@ export default function App() {
   const query = search.toLowerCase()
   const visible = bikes.filter(bike => bike.model.toLowerCase().includes(query))
 
+  const handleDeleteBike = (id) => {
+    setBikes(bikes => bikes.filter(bike => bike.id !== id))
+    setHasDeletedBike(true)
+  }
+
   if(isLoading) return (
     <div className="container mt-4">
       <div className="spinner-border" role="status" />
@@ -41,7 +47,7 @@ export default function App() {
     </div>
   )
 
-  if(bikes.length === 0) return (
+  if(bikes.length === 0 && !hasDeletedBike) return (
     <div className="container mt-4">
       <div className="alert alert-secondary">Brak rowerów</div>
     </div>
@@ -64,10 +70,12 @@ export default function App() {
               <div className="card-body">
                 <h3 className="card-title h5">{bike.model}</h3>
                 <span className="badge text-bg-secondary mb-3">{bike.type}</span>
+                <div>
+                  <button type="button" className="btn btn-outline-danger btn-sm" onClick={() => handleDeleteBike(bike.id)}>Usuń</button>
+                </div>
               </div>
             </div>
           </div>
-
         ))}
       </div>
     </div>

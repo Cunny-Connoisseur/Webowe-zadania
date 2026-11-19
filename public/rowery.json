@@ -1,0 +1,6 @@
+[
+  { "id": 1, "model": "Trek Marlin 5", "type": "górski", "available": true },
+  { "id": 2, "model": "Cube Town", "type": "miejski", "available": false },
+  { "id": 3, "model": "Giant Escape", "type": "szosowy", "available": true },
+  { "id": 4, "model": "Kross Level", "type": "górski", "available": true }
+]

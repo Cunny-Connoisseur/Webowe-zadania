@@ -12,6 +12,7 @@ export default function App() {
   const [bikes, setBikes] = useState([])
   const [isLoading, setIsLoading] = useState(true)
   const [error, setError] = useState(null)
+  const [search, setSearch] = useState('')
 
   useEffect(() => {
     let active = true
@@ -23,6 +24,9 @@ export default function App() {
 
     return () => { active = false }
   }, [])
+
+  const query = search.toLowerCase()
+  const visible = bikes.filter(bike => bike.model.toLowerCase().includes(query))
 
   if(isLoading) return (
     <div className="container mt-4">
@@ -47,8 +51,14 @@ export default function App() {
     <div className="container mt-4">
       <h1>Wypożyczalnia rowerów</h1>
 
+      <input type="text" className="form-control mb-3" placeholder="Szukaj po modelu..." value={search} onChange={event => setSearch(event.target.value)} />
+
+      {visible.length === 0 && (
+        <div className="alert alert-secondary">Brak wyników</div>
+      )}
+
       <div className="row g-3">
-        {bikes.map(bike => (
+        {visible.map(bike => (
           <div key={bike.id} className="col-12 col-md-6">
             <div className={`card h-100${bike.available ? '' : ' opacity-50'}`}>
               <div className="card-body">

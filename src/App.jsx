@@ -88,11 +88,21 @@ function EventPage() {
   )
 }
 
+function NotFoundPage() {
+  return (
+    <div className="container mt-4">
+      <h1>Nie ma takiej strony</h1>
+      <Link to="/">Wróć do listy</Link>
+    </div>
+  )
+}
+
 export default function App() {
   return (
     <Routes>
       <Route path="/wydarzenie/:id" element={<EventPage />} />
       <Route path="/" element={<EventsPage />} />
+      <Route path="*" element={<NotFoundPage />} />
     </Routes>
   )
 }

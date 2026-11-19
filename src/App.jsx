@@ -5,7 +5,7 @@ const categories = [1, 2, 3]
 const categoryNames = { 1: 'Kwiaty', 2: 'Zwierzęta', 3: 'Samochody' }
 
 export default function App() {
-  const photos = initialPhotos
+  const [photos, setPhotos] = useState(initialPhotos)
   const [activeCategories, setActiveCategories] = useState(categories)
 
   const visiblePhotos = photos.filter(photo => activeCategories.includes(photo.category))
@@ -16,6 +16,12 @@ export default function App() {
 
       return [...current, category]
     })
+  }
+
+  const handleDownload = (id) => {
+    setPhotos(photos => photos.map(photo =>
+      photo.id === id ? {...photo, downloads: photo.downloads + 1} : photo
+    ))
   }
 
   return (
@@ -40,6 +46,7 @@ export default function App() {
           <div key={photo.id} className="col-12 col-sm-6 col-md-4">
             <img className="img-fluid rounded" alt={photo.alt} src={photo.filename} />
             <h4 className="h6 mt-2">Pobrań: {photo.downloads}</h4>
+            <button type="button" className="btn btn-success btn-sm" onClick={() => handleDownload(photo.id)}>Pobierz</button>
           </div>
         ))}
       </div>
